@@ -8,7 +8,7 @@ var LocalStrategy = require('passport-local').Strategy;
 passport.use(new LocalStrategy(
     function(username, password, done) {
         if(username=="admin" && password=="password")
-            return done(null, {uasername: "admin", password: "password"});
+            return done(null, {username: "admin", password: "password"});
         else if(username!="admin")
             return done(null, false, {message: "The user is not exist"});
         else if(password!="password")
